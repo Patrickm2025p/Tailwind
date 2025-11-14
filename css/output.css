@@ -9,6 +9,7 @@
       "Courier New", monospace;
     --color-red-600: oklch(57.7% 0.245 27.325);
     --color-amber-50: oklch(98.7% 0.022 95.277);
+    --color-amber-200: oklch(92.4% 0.12 95.746);
     --color-blue-500: oklch(62.3% 0.214 259.815);
     --color-blue-600: oklch(54.6% 0.245 262.881);
     --color-gray-700: oklch(37.3% 0.034 259.733);
@@ -19,6 +20,7 @@
     --text-2xl--line-height: calc(2 / 1.5);
     --text-3xl: 1.875rem;
     --text-3xl--line-height: calc(2.25 / 1.875);
+    --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --radius-lg: 0.5rem;
     --default-font-family: var(--font-sans);
@@ -174,20 +176,32 @@
   }
 }
 @layer utilities {
-  .m-50 {
-    margin: calc(var(--spacing) * 50);
+  .m-40 {
+    margin: calc(var(--spacing) * 40);
   }
   .m-auto {
     margin: auto;
   }
+  .mx-40 {
+    margin-inline: calc(var(--spacing) * 40);
+  }
+  .my-20 {
+    margin-block: calc(var(--spacing) * 20);
+  }
+  .my-30 {
+    margin-block: calc(var(--spacing) * 30);
+  }
+  .my-40 {
+    margin-block: calc(var(--spacing) * 40);
+  }
+  .my-45 {
+    margin-block: calc(var(--spacing) * 45);
+  }
+  .mt-20 {
+    margin-top: calc(var(--spacing) * 20);
+  }
   .mb-5 {
     margin-bottom: calc(var(--spacing) * 5);
-  }
-  .mb-50 {
-    margin-bottom: calc(var(--spacing) * 50);
-  }
-  .block {
-    display: block;
   }
   .flex {
     display: flex;
@@ -202,6 +216,15 @@
     width: calc(var(--spacing) * 40);
     height: calc(var(--spacing) * 40);
   }
+  .h-20 {
+    height: calc(var(--spacing) * 20);
+  }
+  .h-80 {
+    height: calc(var(--spacing) * 80);
+  }
+  .h-400 {
+    height: calc(var(--spacing) * 400);
+  }
   .h-\[95px\] {
     height: 95px;
   }
@@ -211,8 +234,17 @@
   .h-screen {
     height: 100vh;
   }
+  .w-80 {
+    width: calc(var(--spacing) * 80);
+  }
+  .w-600 {
+    width: calc(var(--spacing) * 600);
+  }
   .w-\[80\%\] {
     width: 80%;
+  }
+  .w-auto {
+    width: auto;
   }
   .w-full {
     width: 100%;
@@ -262,25 +294,19 @@
   .rounded-lg {
     border-radius: var(--radius-lg);
   }
-  .rounded-b-lg {
-    border-bottom-right-radius: var(--radius-lg);
-    border-bottom-left-radius: var(--radius-lg);
-  }
   .border {
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
+  .border-4 {
+    border-style: var(--tw-border-style);
+    border-width: 4px;
+  }
   .border-black {
     border-color: var(--color-black);
   }
-  .bg-\[\#3b2e04\] {
-    background-color: #3b2e04;
-  }
   .bg-\[\#043873\] {
     background-color: #043873;
-  }
-  .bg-\[\#ecebe5\] {
-    background-color: #ecebe5;
   }
   .bg-blue-500 {
     background-color: var(--color-blue-500);
@@ -294,20 +320,8 @@
   .p-4 {
     padding: calc(var(--spacing) * 4);
   }
-  .p-5 {
-    padding: calc(var(--spacing) * 5);
-  }
   .p-6 {
     padding: calc(var(--spacing) * 6);
-  }
-  .px-8 {
-    padding-inline: calc(var(--spacing) * 8);
-  }
-  .py-5 {
-    padding-block: calc(var(--spacing) * 5);
-  }
-  .pt-5 {
-    padding-top: calc(var(--spacing) * 5);
   }
   .pt-7 {
     padding-top: calc(var(--spacing) * 7);
@@ -333,14 +347,30 @@
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
   }
-  .text-red-600 {
-    color: var(--color-red-600);
+  .font-semibold {
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
+  }
+  .text-amber-200 {
+    color: var(--color-amber-200);
   }
   .text-white {
     color: var(--color-white);
   }
   .underline {
     text-decoration-line: underline;
+  }
+  .decoration-amber-200 {
+    text-decoration-color: var(--color-amber-200);
+  }
+  .decoration-wavy {
+    text-decoration-style: wavy;
+  }
+  .decoration-2 {
+    text-decoration-thickness: 2px;
+  }
+  .underline-offset-8 {
+    text-underline-offset: 8px;
   }
   .shadow {
     --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
@@ -359,11 +389,6 @@
   .xl\:flex {
     @media (width >= 80rem) {
       display: flex;
-    }
-  }
-  .xl\:hidden {
-    @media (width >= 80rem) {
-      display: none;
     }
   }
 }
